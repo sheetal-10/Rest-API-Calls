@@ -1,5 +1,6 @@
 package com.bridgelabz.RestApiCalls.controller;
 
+import com.bridgelabz.RestApiCalls.entity.Details;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,5 +18,10 @@ public class RestApiCallsController {
     @RequestMapping(value = "/test2/{name}", method = RequestMethod.GET)
     public String getPathMessage(@PathVariable String name){
         return "Hello : " + name + " from bridgelabz ";
+    }
+
+    @RequestMapping(value = "/test3", method = RequestMethod.POST)
+    public String getJsonMessage(@RequestBody Details data){
+        return data.details();
     }
 }
