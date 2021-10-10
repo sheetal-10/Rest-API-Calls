@@ -24,4 +24,9 @@ public class RestApiCallsController {
     public String getJsonMessage(@RequestBody Details data){
         return data.details();
     }
+
+    @RequestMapping(value = "/test4/{firstName}", method = RequestMethod.PUT)
+    public String putMessage(@PathVariable String firstName, @RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
